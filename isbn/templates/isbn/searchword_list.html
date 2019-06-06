@@ -40,9 +40,10 @@
                      {% if item.flag == True %}
                    <td class="text-center" width="50">有効</td> 
                      {% endif %} </td>
-              <td class="text-center" width="100">
-                <a class="btn btn-primary" href="{% url 'isbn:update' item.pk %}" role="button">更新ページ</a>
-               
+                  <td class="text-center" width="100">
+                    <a class="btn btn-primary" href="{% url 'isbn:update' item.pk %}" role="button">更新ページ</a>
+                    <a class="btn btn-danger" href="{% url 'isbn:delete' item.pk %}" role="button">削除ページ</a>
+                  </td>
                  </tr>
              {% endfor %}
              </tbody>

@@ -52,3 +52,14 @@ class WordUpdateView(UpdateView):
 def update_done(request):
     # 更新処理が正常終了した場合に呼ばれるテンプレートを指定
     return render(request, 'isbn/update_done.html')
+
+
+class WordDeleteView(DeleteView):
+    #利用するモデルを指定
+    model = SearchWord
+    #削除処理が正常終了した場合の遷移先を指定
+    success_url = reverse_lazy('isbn:delete_done')
+
+
+def delete_done(request):
+    return render(request, 'isbn/delete_done.html')
